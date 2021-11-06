@@ -38,5 +38,4 @@ const showList = () => {
   addTask('have a walk')
   changeStatus('have a walk', 'Done')
   changeStatus('drink water', 'In progress')
-  console.log(list);
   showList();
