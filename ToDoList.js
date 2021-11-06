@@ -22,18 +22,20 @@ const showList = () => {
     let inProgress = 'In progress: \n';
     let doneTask = 'Done: \n';
       for (let key in list) {
-          if (list[key] === 'ToDo') {
+          switch (list[key]) {
+            case 'ToDo':
         toDoTask += [key] + ',\n' ;
-        }
-        if (list[key] === 'In progress') {
+        break;
+        case 'In progress':
         inProgress += [key] + ',\n';
-        }
-        if (list[key] === 'Done') {
+        break;
+       case 'Done':
         doneTask += [key] + ',\n';
-        }
+        break;
+      }
       }
       console.log(toDoTask, inProgress, doneTask);
-  }
+  };
   addTask('drink water')
   addTask('have a walk')
   changeStatus('have a walk', 'Done')
