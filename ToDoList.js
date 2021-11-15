@@ -1,43 +1,72 @@
-const list = {
-    'great a task': 'In progress',
-    'make a bed': 'Done',
-    'write a post': 'ToDo',
+const list = [
+    { 
+        id: 1,
+        name: 'create a post', 
+        status: 'ToDo', 
+        priority: 'low'  
+    },
+    { 
+        id: 2,
+        name: 'great a task', 
+        status: 'In progress', 
+        priority: 'high'  
+    }, 
+    { 
+        id: 3,
+        name: 'make a bed', 
+        status: 'Done', 
+        priority: 'low'  
+    },    
+]
+const changeStatus = (task, changeTaskStatus) => {
+  let item = list.findIndex(item => item.name == task)
+    if (item !== -1) {
+        list[item].status = changeTaskStatus;
+    } 
 }
-const changeStatus = (taskName, changeTaskStatus) => {
-    if (taskName in list) {
-        list[taskName] = changeTaskStatus;
-    }
+const addTask = (task, priority = 'low', status = 'In progress') => {
+  let findLastId = list.findIndex(item => item.id == list.length) 
+  let NewIdTask = list[findLastId].id + 1;
+    list.push({ 
+    id:  NewIdTask,
+    name: task,
+    status: status,
+    priority: priority,
+  });
 }
-
-const addTask = (taskName) => {
-    list[taskName] = '';
+const deleteTask = (task) => {
+  let item = list.findIndex(item => item.name == task)
+    if (item !== -1) {
+        list.splice(item, 1)    
+        } 
 }
-
-const deleteTask = (taskName) => {
-    delete list[taskName];
-}
-
 const showList = () => {
-    let toDoTask = 'ToDo: \n';
-    let inProgress = 'In progress: \n';
-    let doneTask = 'Done: \n';
-    for (let key in list) {
-        switch (list[key]) {
-            case 'ToDo':
-                toDoTask += [key] + ',\n';
-                break;
-            case 'In progress':
-                inProgress += [key] + ',\n';
-                break;
-            case 'Done':
-                doneTask += [key] + ',\n';
-                break;
-        }
-    }
-    console.log(toDoTask, inProgress, doneTask);
-};
-addTask('drink water')
-addTask('have a walk')
-changeStatus('have a walk', 'Done')
-changeStatus('drink water', 'In progress')
-showList();
+    let toDoTask = 'ToDo:\n';
+    let inProgress = 'In progress:\n';
+    let doneTask = 'Done:\n';
+for (let i = 0; i < list.length; i++) {
+  if (list[i].status === 'ToDo') {
+    toDoTask += list[i].name + '\n';
+  }
+  if (list[i].status === 'In progress') {
+    inProgress += list[i].name + '\n';
+  }
+  if (list[i].status === 'Done') {
+    doneTask += list[i].name + '\n';
+  }
+ }
+ 
+  console.log(toDoTask, inProgress, doneTask)
+ };
+
+ 
+
+
+
+
+
+changeStatus('make a bed', 'In progress')
+addTask('fggg', 'low', 'ToDo')
+showList()
+console.log(list)
+
