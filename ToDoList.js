@@ -1,37 +1,38 @@
+let idTask = 0;
 const list = [
     { 
-        id: 1,
+        id: ++idTask,
         name: 'create a post', 
         status: 'ToDo', 
         priority: 'low'  
     },
     { 
-        id: 2,
+        id: ++idTask,
         name: 'great a task', 
         status: 'In progress', 
         priority: 'high'  
     }, 
     { 
-        id: 3,
+        id: ++idTask,
         name: 'make a bed', 
         status: 'Done', 
         priority: 'low'  
     },    
 ]
+
 const changeStatus = (task, changeTaskStatus) => {
   let item = list.findIndex(item => item.name == task)
     if (item !== -1) {
         list[item].status = changeTaskStatus;
     } 
 }
-const addTask = (task, priority = 'low', status = 'In progress') => {
-  let findLastId = list.findIndex(item => item.id == list.length) 
-  let NewIdTask = list[findLastId].id + 1;
+const addTask = (name, priority = 'low', status = 'In progress') => {
+  
     list.push({ 
-    id:  NewIdTask,
-    name: task,
-    status: status,
-    priority: priority,
+    id:  ++idTask,
+    name,
+    status,
+    priority,
   });
 }
 const deleteTask = (task) => {
@@ -59,14 +60,10 @@ for (let i = 0; i < list.length; i++) {
   console.log(toDoTask, inProgress, doneTask)
  };
 
- 
-
-
-
-
-
 changeStatus('make a bed', 'In progress')
 addTask('fggg', 'low', 'ToDo')
+deleteTask('make a bed')
+addTask('ahaha')
 showList()
 console.log(list)
 
