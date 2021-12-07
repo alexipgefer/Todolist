@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="conteiner">
+      <div class="high_low_heading">HIGH</div>
+      
+        <div id="divTask" class="add_high_tasks">
+            <form>
+            <input type="text" class="addTaskInputHighTask" value="Добавить важных дел">
+          </form> 
+            <button class="addAnyTask_icon">+</button>
+        </div>
+        <div class = "current_task_high">
+            <div  id = 'currentTaskTextHigh' class="current_task_text">
+              <input type="radio" class="doneTask_icon" name="task">
+              <p>Сверстать этот ToDO</p>
+            <button  class="deleteTask">&#215</button> 
+            </div> 
+            <div class="current_task_text">
+              <input type="radio" class="doneTask_icon" name="task">
+              <p>Начать делать задачу</p>
+            <button class="deleteTask">&#215</button> 
+            </div>
+            <div class="current_task_text">
+              <input type="radio" class="doneTask_icon" name="task">
+              <p>Сверстать этот ToDO</p>
+            <button class="deleteTask">&#215</button> 
+            </div>
+        </div>
+       <div class="high_low_heading">LOW</div>
+          <div id="divTask" class="add_low_tasks">
+            <form>
+              <input type="text" class="addTaskInputLowTask" value="Добавить неважных дел"> 
+            </form>
+            <button class="addAnyTask_icon">+</button>
+          </div>
+          <div class = "current_task_low">
+               <div id = 'currentTaskTextLow' class="current_task_text">
+              <input type="radio" class="doneTask_icon" name="task">
+              <p>Посмотреть ютубчик</p>
+            <button class="deleteTask">&#215</button> 
+          </div>
+          </div>
+    </div>
+</body>
+<script type = 'module'  src="main.js"></script>
+</html>

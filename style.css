@@ -1,0 +1,90 @@
+.conteiner{
+    margin: 0 auto;
+    width: 476px;
+    height: 688px;
+}
+
+.high_low_heading {   
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000; 
+    text-align: center ; 
+}
+
+.add_high_tasks{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    flex-wrap: wrap;    
+    background: #FFFFFF;
+    color: #FFFFFF; 
+    }
+.add_low_tasks{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    flex-wrap: wrap;    
+    background: #FFFFFF;
+    color: #FFFFFF;
+     
+}
+
+.addTaskInputHighTask{
+    width: 460px;
+    height: 45px;
+    background: #FFFFFF;
+    color: #BBBBBB;
+    border-radius: 6px;
+    text-align: left;
+} 
+
+.addTaskInputLowTask{
+    width: 460px;
+    height: 45px;
+    background: #FFFFFF;
+    color: #BBBBBB;
+    border-radius: 6px;
+    text-align: left;
+} 
+
+.current_task_text {
+    display: flex;
+    width: 460px;
+    font-size: 18px;
+    color: #000000;
+    border-radius: 6px;
+    border: 1px solid #BBBBBB;
+    margin: 8px;    
+}
+
+.doneTask_icon {
+    height:22px;
+    width: 21px;      
+}
+
+.deleteTask {
+    position: relative;
+    height:30px;
+    width:30px;
+    left: 235px;
+    top: 10px;
+    background: #FFFFFF;    
+    border: 0;    
+    color: #000000;
+    font-size: 30px;    
+}
+
+.addAnyTask_icon {
+    position: relative;
+    height:30px;
+    width:30px;
+    background: #FFFFFF;
+    right: 35px;
+    top: 7px;
+    border: 0;    
+    color: #000000;
+    text-align: center;
+    font-size: 30px;
+    margin-right: -30px;
+}
+    
